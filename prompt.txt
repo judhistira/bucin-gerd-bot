@@ -1,60 +1,78 @@
-# GERD Meal Reminder Bot - Dokumentasi Lengkap (External Cron Edition)
+# GERD Meal Reminder Bot - Dokumentasi Teknis
 
 ## Deskripsi
 Bot Discord yang mengingatkan penderita GERD untuk makan teratur dengan rekomendasi makanan berdasarkan cuaca dan waktu. Bot ini menggunakan Google Gemini API, OpenWeatherMap, dan di-deploy di Vercel. Penjadwalan ditangani oleh layanan cron job eksternal.
 
-## Fitur Utama
-1. Pengingat makan terjadwal via webhook yang dipanggil cron job eksternal.
-2. Rekomendasi makanan berdasarkan cuaca dan waktu dengan penilaian yang lebih cerdas.
-3. Pesan penyemangat untuk makan teratur.
-4. Personalisasi pesan menggunakan Google Gemini.
-5. Dioptimalkan untuk deployment di Vercel.
-
-## Teknologi yang Digunakan
-- Node.js
-- Discord.js
-- Google Gemini API (gemini-1.5-flash)
-- OpenWeatherMap API
-- Express.js (untuk endpoint webhook)
-- Layanan Cron Job Eksternal (contoh: cron-job.org)
-
-## File yang Dibuat
-1. index.js - File utama bot dan serverless function (webhook endpoint).
-2. .env - File konfigurasi environment lokal.
-3. package.json - Dependensi dan script.
-4. README.md - Dokumentasi.
-5. vercel.json - Konfigurasi deployment untuk Vercel.
-6. .gitignore - File yang diabaikan.
-7. test-reminder.js - Script untuk testing lokal.
+## Struktur Proyek
+Proyek ini memiliki struktur modular untuk kemudahan pengelolaan:
+- **`index.js`**: Entry point aplikasi. Menjalankan server Express dan menangani webhook.
+- **`bot.js`**: Logika inti bot, memproses dan mengirim pesan.
+- **`gemini.js`**: Mengelola interaksi dengan Google Gemini API.
+- **`foods.js`**: Database makanan GERD-friendly.
+- **`utils.js`**: Kumpulan fungsi utilitas.
+- **`test-reminder.js`**: Script untuk testing pengiriman ke Discord.
+- **`test-console.js`**: Script untuk testing output di console.
+- **`.env`**: File konfigurasi environment lokal.
+- **`.env.example`**: Template untuk file konfigurasi environment.
+- **`package.json`**: Dependensi dan script.
+- **`README.md`**: Dokumentasi utama.
+- **`DOCUMENTATION.md`**: Dokumentasi teknis lengkap.
+- **`vercel.json`**: Konfigurasi deployment untuk Vercel.
 
 ## Konfigurasi Environment Variables
-- DISCORD_TOKEN: Token bot Discord
-- GEMINI_API_KEY: API key Google Gemini
-- OPENWEATHER_API_KEY: API key OpenWeatherMap
-- CHANNEL_ID: ID channel Discord tujuan
-- LOCATION: Lokasi untuk data cuaca (default: "Jatibarang, ID")
+- `DISCORD_TOKEN`: Token bot Discord
+- `GEMINI_API_KEY`: API key Google Gemini
+- `OPENWEATHER_API_KEY`: API key OpenWeatherMap
+- `CHANNEL_ID`: ID channel Discord tujuan
+- `LOCATION`: Lokasi untuk data cuaca (default: "Jatibarang, ID")
 
 ## Cara Kerja
-1. Layanan cron job eksternal memanggil endpoint webhook `https://<nama-app-anda>.vercel.app/gerd-reminder` sesuai jadwal yang ditentukan.
-2. Panggilan tersebut memicu serverless function di `index.js`.
-3. Bot mengambil data cuaca dari OpenWeatherMap.
-4. Bot menentukan apakah cuaca saat ini "panas" atau "tidak panas" berdasarkan perbedaan suhu dengan suhu rata-rata di Indonesia ditambah fase waktu (pagi, siang, malam).
-5. Menggunakan Google Gemini untuk membuat rekomendasi makanan dan pesan penyemangat yang disesuaikan dengan kondisi cuaca yang telah diklasifikasikan.
-6. Menggabungkan semua informasi menjadi pesan yang personal dan menarik.
-7. Mengirim pesan ke channel Discord yang ditentukan.
+1.  Layanan cron job eksternal memanggil endpoint webhook (`/gerd-reminder`) di `index.js`.
+2.  `index.js` menerima panggilan dan memicu `sendMealReminder` dari `bot.js`.
+3.  `bot.js` menjalankan logika utama:
+    a.  Menggunakan `getTimeInfo` dari `utils.js` untuk menentukan waktu.
+    b.  Memanggil `getWeatherData` untuk mendapatkan data cuaca.
+    c.  Memanggil `getRandomFoodRecommendation` dari `gemini.js` untuk mendapatkan rekomendasi makanan dari database.
+    d.  Memanggil `generateFinalMessage` dari `gemini.js` untuk membuat pesan akhir (termasuk pesan penyemangat).
+    e.  Memecah pesan jika melebihi 2000 karakter menggunakan `splitMessageIntoChunks` dari `utils.js`.
+    f.  Mengirim pesan ke channel Discord.
+4.  `gemini.js` berisi semua detail prompt yang dikirim ke Google Gemini API dan fungsi untuk memformat pesan.
+
+## Database Makanan
+Bot menggunakan database makanan yang berisi:
+- 20 makanan berbasis nasi untuk setiap waktu makan (pagi, siang, malam)
+- 20 makanan non-nasi untuk setiap waktu makan (pagi, siang, malam)
+- Setiap rekomendasi dipilih secara acak dari database ini
+- Semua makanan umum dimakan orang Indonesia, terjangkau, mudah didapat, dan ramah GERD
+
+## Optimasi Penggunaan API
+Untuk menghemat penggunaan API Google Gemini, bot kini menggabungkan:
+- Pembuatan pesan penyemangat
+- Pembuatan pesan akhir
+
+Dalam satu panggilan API, yang membuat bot lebih efisien dan mengurangi biaya penggunaan API.
+
+## Pemecahan Pesan Panjang
+Bot dapat memecah pesan yang melebihi 2000 karakter (batas maksimal pesan Discord) menjadi beberapa bagian:
+- Memecah pesan berdasarkan paragraf terlebih dahulu
+- Jika paragraf terlalu panjang, memecah berdasarkan kalimat
+- Menambahkan jeda kecil antar pesan untuk menghindari rate limiting
+- Menampilkan pesan sebagai serangkaian pesan terpisah di Discord
+
+## Testing
+- **Tes Pengiriman ke Discord**: `npm run test-reminder`
+- **Tes Output di Console**: `npm run test:console`
 
 ## Deployment
 ### Lokal (untuk development):
 - Gunakan `npm run test-reminder` untuk menjalankan tes pengiriman pesan secara manual.
+- Gunakan `npm run test:console` untuk melihat output di console tanpa koneksi ke Discord.
 
 ### Vercel (untuk produksi):
 - Cukup lakukan `git push` ke repositori yang terhubung dengan Vercel.
 - Vercel akan secara otomatis men-deploy bot.
 - Pastikan semua Environment Variables sudah diatur di dashboard Vercel.
 - Atur layanan cron job eksternal untuk memanggil URL webhook Anda.
-
-## Testing
-- Gunakan `npm run test-reminder` untuk menguji fungsi pengiriman pesan secara langsung, tanpa perlu menjalankan server. Skrip ini akan login, mengirim satu pesan, lalu keluar.
 
 ## Catatan Penting
 - Penjadwalan sepenuhnya diatur oleh layanan cron job eksternal.

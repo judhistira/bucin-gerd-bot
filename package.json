@@ -5,12 +5,13 @@
   "scripts": {
     "start": "node index.js",
     "test-reminder": "node test-reminder.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:console": "node test-console.js",
+    "test": "npm run test:console"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Discord bot that reminds GERD patients to eat regularly with food recommendations based on weather and time, with romantic Rangga-style messages",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.11.0",
