@@ -92,7 +92,7 @@ async function generateFinalMessage(
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const prompt = `Buat pesan dalam bentuk narasi yang mengalir dengan gaya bahasa yang penuh perasaan, dingin, pendiam, puitis, introspektif, dan filosofis. Panjang pesan sekitar 1500 hingga 2000 karakter.
+    const prompt = `Buat pesan dalam bentuk narasi yang mengalir dengan gaya bahasa yang penuh perasaan,  puitis, introspektif, dan filosofis. Panjang pesan tidak lebih dari 1500 karakter.
     
     <instruksi>
     Buat narasi yang padu dan berkesinambungan dengan struktur berikut:
@@ -108,23 +108,13 @@ async function generateFinalMessage(
     Waktu: ${timeOfDay}
     </konteks_waktu>
     
-    <kondisi_cuaca>
-    Cuaca saat ini: ${
-      weatherData
-        ? `${weatherData.description} dengan suhu ${weatherData.temperature}°C`
-        : "Data cuaca tidak tersedia"
-    }
-    Kondisi Cuaca: ${foodRecommendation.weatherCondition}
-    - Jangan menyebutkan suhu sebagai angka pada pesan
-    </kondisi_cuaca>
-    
     <rekomendasi_makanan>
     ${formatFoodRecommendation(foodRecommendation)}
     - Sesuaikan rekomendasi dengan kondisi cuaca:
        - Jika cuaca panas: berikan makanan yang segar dan ringan
        - Jika cuaca tidak panas: berikan makanan yang hangat dan mengenyangkan
     - Pastikan semua makanan ramah GERD (tidak pedas, tidak asam, tidak berlemak)
-    - Buatkan satu paragraf pendek untuk setiap rekomendasi makanan
+    - Buatkan satu paragraf singkat untuk setiap rekomendasi makanan
     </rekomendasi_makanan>
     
     <pesan_penyemangat>
@@ -142,7 +132,6 @@ async function generateFinalMessage(
     
     <gaya_karakter>
     - Dingin & Hemat Kata: Berbicara seperlunya, tidak suka basa-basi
-    - Sarkastis & Sinis Ringan: Kadang ucapannya bernada menyindir dengan halus
     - Diam-diam menaruh perhatian pada lawan bicara
     - Puitis: Bahasa yang penuh perasaan dan estetika
     - Introspektif & Filosofis: Pemikiran yang dalam tentang cinta dan perhatian
@@ -156,7 +145,7 @@ async function generateFinalMessage(
     - Buatkan satu paragraf pendek untuk setiap rekomendasi makanan
     - Pisahkan setiap paragraf dengan satu baris kosong
     - Pastikan format output tidak mengandung tag XML
-    - Panjang pesan sekitar 1500 hingga 2000 karakter    
+    - Panjang pesan tidak lebih dari 1500 karakter    
     - Jangan membuat daftar atau poin-poin terpisah
     - Jadikan satu kesatuan narasi yang utuh dan padu
     </format_output>`;
