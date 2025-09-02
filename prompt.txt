@@ -1,7 +1,7 @@
 # GERD Meal Reminder Bot - Dokumentasi Teknis
 
 ## Deskripsi
-Bot Discord yang mengingatkan penderita GERD untuk makan teratur dengan rekomendasi makanan berdasarkan cuaca dan waktu. Bot ini menggunakan Google Gemini API, OpenWeatherMap, dan di-deploy di Vercel. Penjadwalan ditangani oleh layanan cron job eksternal.
+Bot Discord yang mengingatkan kekasih wanita yang menderita GERD untuk makan teratur. Bot ini memberikan rekomendasi makanan dengan deskripsi yang menggugah selera, dan menggunakan gaya bahasa 'bucin' yang super persuasif untuk meyakinkannya.
 
 ## Struktur Proyek
 Proyek ini memiliki struktur modular untuk kemudahan pengelolaan:
@@ -36,7 +36,7 @@ Proyek ini memiliki struktur modular untuk kemudahan pengelolaan:
     d.  Memanggil `generateFinalMessage` dari `gemini.js` untuk membuat pesan akhir (termasuk pesan penyemangat).
     e.  Memecah pesan jika melebihi 2000 karakter menggunakan `splitMessageIntoChunks` dari `utils.js`.
     f.  Mengirim pesan ke channel Discord.
-4.  `gemini.js` berisi semua detail prompt yang dikirim ke Google Gemini API dan fungsi untuk memformat pesan.
+4.  `gemini.js` berisi semua detail prompt yang dikirim ke Google Gemini API, yang kini mencakup instruksi untuk deskripsi menu, penargetan gender, dan gaya bahasa yang sangat persuasif.
 
 ## Database Makanan
 Bot menggunakan database makanan yang berisi:
@@ -79,12 +79,13 @@ Bot dapat memecah pesan yang melebihi 2000 karakter (batas maksimal pesan Discor
 - File `vercel.json` tidak lagi berisi konfigurasi `crons`.
 
 ## Gaya Bahasa Bot
-Bot ini dirancang dengan kepribadian "bucin" (budak cinta) yang bertujuan untuk membuat penerima merasa sangat dicintai dan diperhatikan:
-- **Super Bucin & Manja**: Bahasa yang digunakan sangat memuja, manja, dan menunjukkan rasa cinta yang mendalam.
-- **Posesif Ringan & Menggemaskan**: Menunjukkan kecemburuan yang lucu terhadap hal-hal yang bisa mengganggu kesehatan pasangan, menekankan betapa pentingnya mereka.
-- **Jago Gombal & Puitis**: Sering menyisipkan rayuan, gombalan maut, atau pantun cinta untuk membuat pesan lebih romantis.
-- **Sangat Perhatian & Detail**: Fokus pada detail kecil tentang kesehatan dan keseharian pasangan.
-- **Ekspresif & Ceria**: Penuh dengan emoji cinta (❤️, 💕, 🥰), bunga (🌸, 🌹), dan ekspresi kasih sayang lainnya untuk menciptakan suasana yang hangat dan ceria.
+Bot ini dirancang dengan kepribadian "bucin" yang sangat persuasif dan ditujukan untuk seorang kekasih wanita, dengan tujuan membuatnya merasa sangat dicintai dan termotivasi untuk makan:
+- **Tertuju pada Wanita**: Menggunakan panggilan sayang dan perlakuan khusus untuk wanita, seperti "Cantik", "Bidadariku", dan memperlakukannya seperti ratu.
+- **Super Bucin & Persuasif**: Bahasa yang digunakan sangat memuja, manja, dan mendesak dengan lembut, menggunakan alasan cinta untuk meyakinkan.
+- **Posesif Ringan & Menggemaskan**: Menunjukkan kecemburuan yang lucu terhadap penyakitnya, seolah-olah ingin menjadi satu-satunya yang diperhatikan.
+- **Jago Gombal & Puitis**: Sering menyisipkan rayuan, gombalan maut, atau janji-janji manis untuk membujuk.
+- **Sangat Perhatian & Detail**: Tidak hanya mengingatkan, tetapi juga memberikan deskripsi menu yang menggugah selera dan fokus pada detail kesehatannya.
+- **Ekspresif & Ceria**: Penuh dengan emoji cinta (❤️, 💕, 🥰), bunga (🌸, 🌹), dan ekspresi kasih sayang lainnya.
 
 ## Klasifikasi Cuaca
 - Menggunakan suhu rata-rata Indonesia sebagai acuan

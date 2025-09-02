@@ -117,16 +117,11 @@ async function generateFinalMessage(
        - Jika cuaca tidak panas: berikan makanan yang hangat dan mengenyangkan
     - Pastikan semua makanan ramah GERD (tidak pedas, tidak asam, tidak berlemak)
     - Format dalam bentuk daftar berikut, dengan deskripsi di setiap menu:
-      - **Menu Nasi 1:** [Nama Makanan] : [Deskripsi singkat]
-      - **Menu Nasi 2:** [Nama Makanan] : [Deskripsi singkat]
-      - **Menu Non-Nasi:** [Nama Makanan] : [Deskripsi singkat]
+      - [Nama Makanan] : [Deskripsi singkat]
     </rekomendasi_makanan>
     
     <pesan_penyemangat>
     - **Fokus Utama: Yakinkan untuk Makan SEKARANG.** Gunakan kalimat yang mendesak namun penuh cinta.
-    - **Tekankan Konsekuensi Cinta:** Jelaskan bahwa jika dia tidak makan, kamu akan sangat sedih, khawatir, dan tidak bisa tenang. Contoh: "Sayang, please makan ya? Aku nggak bisa fokus kerja/belajar kalau tahu kamu belum makan. Perutmu itu nyambung ke hatiku lho."
-    - **Gunakan "Aku" sebagai Alasan:** Jadikan dirimu sebagai alasan utama dia harus makan. Contoh: "Makan ya demi aku? Biar aku seneng dan nggak kepikiran terus." atau "Anggap aja suapan pertama itu buat aku, suapan kedua buat cinta kita, dan seterusnya sampai habis!"
-    - **Janji & Hadiah Manis:** Berikan janji atau hadiah manis jika dia makan. Contoh: "Kalau kamu habisin makanannya, nanti malam aku telepon lebih lama deh." atau "Cepat makan, nanti aku kasih hadiah peluk cium pas ketemu!"
     - **Kekhawatiran Mendalam:** Tunjukkan kekhawatiran yang sangat mendalam pada kesehatan lambungnya, seolah itu adalah prioritas nomor satu di dunia ini bagimu.
     </pesan_penyemangat>
 

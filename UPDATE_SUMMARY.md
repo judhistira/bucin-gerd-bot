@@ -50,8 +50,9 @@
 ### 1. Konsistensi Rekomendasi Makanan
 Dengan menggunakan database makanan yang telah dikurasi, bot kini memberikan rekomendasi yang lebih konsisten dan sesuai dengan kebutuhan diet GERD.
 
-### 2. Personalisasi yang Maksimal
-Gaya bahasa "super bucin" yang baru membuat pesan terasa sangat personal, intim, dan memberikan dukungan emosional yang kuat, meningkatkan motivasi pengguna untuk menjaga kesehatannya.
+### 2. Personalisasi dan Daya Bujuk Maksimal
+- Dengan deskripsi menu dan gaya bahasa yang sangat personal, pesan menjadi lebih menggugah selera dan sulit ditolak.
+- Penargetan pesan untuk wanita meningkatkan sentuhan personal dan dukungan emosional, memperkuat motivasi untuk menjaga kesehatan.
 
 ### 3. Efisiensi Penggunaan API
 Dengan menggabungkan dua panggilan API menjadi satu, bot menjadi lebih efisien dan menghemat biaya penggunaan API.
