@@ -12,13 +12,13 @@
 - [Klasifikasi Cuaca yang Lebih Cerdas](#klasifikasi-cuaca-yang-lebih-cerdas)
 
 ## Deskripsi
-Bot Discord yang mengingatkan penderita GERD untuk makan teratur dengan rekomendasi makanan berdasarkan cuaca dan waktu. Bot ini menggunakan Google Gemini API untuk membuat rekomendasi makanan yang personal dan pesan penyemangat yang hangat dengan gaya karakter Rangga dari film "Ada Apa Dengan Cinta?".
+Bot Discord yang mengingatkan penderita GERD untuk makan teratur dengan rekomendasi makanan berdasarkan cuaca dan waktu. Bot ini menggunakan Google Gemini API untuk membuat rekomendasi makanan yang personal untuk kekasih wanitanya. Pesan dirancang agar super persuasif dengan gaya "bucin" (budak cinta) yang manja dan romantis, lengkap dengan deskripsi menu yang menggugah selera untuk meyakinkannya menjaga pola makan.
 
 ## Fitur Utama
 - **Pengingat Terjadwal**: Mengirim pengingat makan 3x sehari secara otomatis.
-- **Rekomendasi Cerdas**: Rekomendasi makanan disesuaikan dengan cuaca (panas/tidak panas) dan waktu (pagi/siang/malam).
+- **Rekomendasi Cerdas dengan Deskripsi**: Rekomendasi makanan tidak hanya disesuaikan dengan cuaca dan waktu, tetapi juga dilengkapi deskripsi singkat yang menggugah selera.
 - **Database Makanan GERD**: Database berisi 20 makanan nasi dan 20 makanan non-nasi untuk setiap waktu makan yang umum dimakan orang Indonesia, terjangkau, mudah didapat, dan ramah GERD.
-- **Personalisasi AI**: Pesan dibuat seolah-olah dari orang terdekat menggunakan Google Gemini API dengan gaya karakter Rangga.
+- **Personalisasi AI untuk Wanita**: Pesan secara eksplisit ditujukan untuk seorang wanita, dengan gaya bahasa "bucin" yang super personal, manja, dan romantis untuk memberikan dukungan emosional yang maksimal.
 - **Optimasi Penggunaan API**: Menggabungkan pesan penyemangat dan pesan akhir dalam satu panggilan API.
 - **Pemecahan Pesan Panjang**: Memecah pesan yang melebihi 2000 karakter menjadi beberapa bagian.
 - **Siap Deploy**: Dioptimalkan untuk deployment mudah dan gratis di Vercel.
@@ -172,13 +172,13 @@ Pendekatan ini memungkinkan bot untuk memberikan rekomendasi makanan yang lebih 
 
 ## Gaya Bahasa Bot
 
-Bot ini menggunakan gaya bahasa yang terinspirasi dari karakter Rangga dalam film "Ada Apa Dengan Cinta?":
-- **Dingin & Hemat Kata**: Berbicara seperlunya, tidak suka basa-basi
-- **Sarkastis & Sinis Ringan**: Kadang ucapannya bernada menyindir dengan halus
-- **Diam-diam menaruh perhatian**: Menunjukkan kepedulian secara halus
-- **Puitis**: Bahasa yang penuh perasaan dan estetika
-- **Introspektif**: Pemikiran yang dalam tentang cinta dan perhatian
-- **Personal dan Intimate**: Pesan yang terasa seperti dari kekasih
+Bot ini dirancang dengan kepribadian "bucin" yang sangat persuasif dan ditujukan untuk seorang kekasih wanita, dengan tujuan membuatnya merasa sangat dicintai dan termotivasi untuk makan:
+- **Tertuju pada Wanita**: Menggunakan panggilan sayang dan perlakuan khusus untuk wanita, seperti "Cantik", "Bidadariku", dan memperlakukannya seperti ratu.
+- **Super Bucin & Persuasif**: Bahasa yang digunakan sangat memuja, manja, dan mendesak dengan lembut, menggunakan alasan cinta untuk meyakinkan.
+- **Posesif Ringan & Menggemaskan**: Menunjukkan kecemburuan yang lucu terhadap penyakitnya, seolah-olah ingin menjadi satu-satunya yang diperhatikan.
+- **Jago Gombal & Puitis**: Sering menyisipkan rayuan, gombalan maut, atau janji-janji manis untuk membujuk.
+- **Sangat Perhatian & Detail**: Tidak hanya mengingatkan, tetapi juga memberikan deskripsi menu yang menggugah selera dan fokus pada detail kesehatannya.
+- **Ekspresif & Ceria**: Penuh dengan emoji cinta (❤️, 💕, 🥰), bunga (🌸, 🌹), dan ekspresi kasih sayang lainnya.
 
 ## Database Makanan
 

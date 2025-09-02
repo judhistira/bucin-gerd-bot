@@ -13,37 +13,36 @@
 - Setiap rekomendasi kini terdiri dari 2 makanan nasi dan 1 makanan non-nasi
 - Rekomendasi disesuaikan dengan waktu makan dan kondisi cuaca
 
-### 3. Perubahan Gaya Bahasa Bot
-- Mengadopsi gaya bahasa karakter Rangga dari film "Ada Apa Dengan Cinta?"
-- Pesan menjadi lebih puitis, introspektif, dan personal
-- Gaya bahasa mencakup:
-  - Dingin & Hemat Kata
-  - Sarkastis & Sinis Ringan
-  - Diam-diam menaruh perhatian
-  - Personal dan Intimate
+### 3. Penambahan Deskripsi Menu
+- Setiap rekomendasi makanan kini dilengkapi dengan deskripsi singkat yang menggugah selera untuk meningkatkan daya bujuk.
 
-### 4. Optimasi Penggunaan API
+### 4. Peningkatan Gaya Bahasa "Super Bucin & Persuasif"
+- Gaya bahasa "bucin" dipertajam agar lebih persuasif dan mendesak dengan lembut.
+- Pesan secara eksplisit ditujukan untuk kekasih wanita, membuatnya merasa diperlakukan seperti ratu.
+- Tujuannya adalah untuk memberikan dukungan emosional maksimal dan memastikan pesan tidak bisa ditolak.
+
+### 5. Optimasi Penggunaan API
 - Menggabungkan fungsi `getMotivationalMessage` dan `generateFinalMessage` menjadi satu fungsi
 - Mengurangi panggilan API dari 2 kali menjadi 1 kali per pengingat
 - Lebih efisien dan menghemat biaya penggunaan API
 
-### 5. Pemecahan Pesan Panjang
+### 6. Pemecahan Pesan Panjang
 - Menambahkan fungsi `splitMessageIntoChunks` untuk memecah pesan yang melebihi 2000 karakter
 - Memecah pesan berdasarkan paragraf terlebih dahulu, kemudian berdasarkan kalimat jika perlu
 - Menambahkan jeda kecil antar pesan untuk menghindari rate limiting
 
-### 6. Pembaruan Fungsi dan Modul
+### 7. Pembaruan Fungsi dan Modul
 - Memperbarui `gemini.js` untuk menggunakan database makanan dan gaya bahasa baru
 - Memperbarui `bot.js` untuk mengintegrasikan fungsi-fungsi baru dan pemecahan pesan
 - Memperbarui `utils.js` dengan fungsi `splitMessageIntoChunks`
 - Memperbarui `test-console.js` untuk mencerminkan perubahan
 
-### 7. Pembaruan Dokumentasi
+### 8. Pembaruan Dokumentasi
 - Memperbarui `README.md` dengan informasi terbaru
 - Memperbarui `DOCUMENTATION.md` dengan penjelasan lengkap tentang database makanan dan gaya bahasa
 - Memperbarui `prompt.txt` dengan struktur proyek terbaru
 
-### 8. Pembaruan Metadata
+### 9. Pembaruan Metadata
 - Memperbarui deskripsi di `package.json` untuk mencerminkan fitur baru
 
 ## Manfaat Perubahan
@@ -51,8 +50,8 @@
 ### 1. Konsistensi Rekomendasi Makanan
 Dengan menggunakan database makanan yang telah dikurasi, bot kini memberikan rekomendasi yang lebih konsisten dan sesuai dengan kebutuhan diet GERD.
 
-### 2. Personalisasi yang Lebih Baik
-Gaya bahasa yang baru membuat pesan terasa lebih personal dan intimate, seolah-olah berasal dari kekasih pengguna.
+### 2. Personalisasi yang Maksimal
+Gaya bahasa "super bucin" yang baru membuat pesan terasa sangat personal, intim, dan memberikan dukungan emosional yang kuat, meningkatkan motivasi pengguna untuk menjaga kesehatannya.
 
 ### 3. Efisiensi Penggunaan API
 Dengan menggabungkan dua panggilan API menjadi satu, bot menjadi lebih efisien dan menghemat biaya penggunaan API.

@@ -92,13 +92,14 @@ async function generateFinalMessage(
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const prompt = `Buat pesan dalam bentuk narasi yang mengalir dengan gaya bahasa yang penuh perasaan,  puitis, introspektif, dan filosofis. Panjang pesan tidak lebih dari 1500 karakter.
-    
+    const prompt = `
+**Tugas Utama: Buat pesan pengingat makan yang SANGAT PERSUASIF untuk kekasihmu (seorang PEREMPUAN) yang punya GERD.** Pesan harus super BUCIN (budak cinta) dan tidak bisa ditolak. Tujuannya adalah membuatnya merasa seperti wanita yang paling dicintai dan yakin untuk makan saat itu juga. Panjang pesan sekitar 1000 karakter.
+
     <instruksi>
     Buat narasi yang padu dan berkesinambungan dengan struktur berikut:
     
     <sapaan>
-    Buat sapaan puitis namun hangat dan personal seperti dari kekasih
+    Gunakan sapaan yang super mesra dan personal, seolah-olah kamu tidak bisa hidup tanpanya. Contoh: "Sayangku satu-satunya...", "Cintaku, belahan jiwaku...", "Duniaku...".
     </sapaan>
     
     <narasi_utama>
@@ -110,45 +111,109 @@ async function generateFinalMessage(
     
     <rekomendasi_makanan>
     ${formatFoodRecommendation(foodRecommendation)}
+    - **Deskripsikan Setiap Menu:** Berikan deskripsi singkat (1-2 kalimat) yang menggugah selera untuk setiap menu yang direkomendasikan. Contoh: "Nasi tim ayam jamur yang lembut dan gurih, gampang banget ditelan dan bikin perut nyaman."
     - Sesuaikan rekomendasi dengan kondisi cuaca:
        - Jika cuaca panas: berikan makanan yang segar dan ringan
        - Jika cuaca tidak panas: berikan makanan yang hangat dan mengenyangkan
     - Pastikan semua makanan ramah GERD (tidak pedas, tidak asam, tidak berlemak)
-    - Buatkan satu paragraf singkat untuk setiap rekomendasi makanan
+    - Format dalam bentuk daftar berikut, dengan deskripsi di setiap menu:
+      - **Menu Nasi 1:** [Nama Makanan] : [Deskripsi singkat]
+      - **Menu Nasi 2:** [Nama Makanan] : [Deskripsi singkat]
+      - **Menu Non-Nasi:** [Nama Makanan] : [Deskripsi singkat]
     </rekomendasi_makanan>
     
     <pesan_penyemangat>
-    - Jika waktu adalah 'Sarapan/Pagi' atau 'Makan Siang', berikan semangat untuk aktivitas atau pekerjaannya.
-    - Jika waktu adalah 'Makan Malam', ingatkan dia untuk rileks dan beristirahat setelah makan.
-    - Tambahkan perhatian personal untuk kesehatan lambungnya
+    - **Fokus Utama: Yakinkan untuk Makan SEKARANG.** Gunakan kalimat yang mendesak namun penuh cinta.
+    - **Tekankan Konsekuensi Cinta:** Jelaskan bahwa jika dia tidak makan, kamu akan sangat sedih, khawatir, dan tidak bisa tenang. Contoh: "Sayang, please makan ya? Aku nggak bisa fokus kerja/belajar kalau tahu kamu belum makan. Perutmu itu nyambung ke hatiku lho."
+    - **Gunakan "Aku" sebagai Alasan:** Jadikan dirimu sebagai alasan utama dia harus makan. Contoh: "Makan ya demi aku? Biar aku seneng dan nggak kepikiran terus." atau "Anggap aja suapan pertama itu buat aku, suapan kedua buat cinta kita, dan seterusnya sampai habis!"
+    - **Janji & Hadiah Manis:** Berikan janji atau hadiah manis jika dia makan. Contoh: "Kalau kamu habisin makanannya, nanti malam aku telepon lebih lama deh." atau "Cepat makan, nanti aku kasih hadiah peluk cium pas ketemu!"
+    - **Kekhawatiran Mendalam:** Tunjukkan kekhawatiran yang sangat mendalam pada kesehatan lambungnya, seolah itu adalah prioritas nomor satu di dunia ini bagimu.
     </pesan_penyemangat>
+
+    <gaya_karakter>
+    - **Bicara pada Wanita:** Gunakan panggilan sayang untuk wanita (Contoh: "Cantik," "Sayangku," "Bidadariku"). Perlakukan dia seperti seorang ratu.
+    - Super Bucin & Manja: Gunakan bahasa yang sangat memuja, manja, dan menunjukkan ketergantungan cinta.
+    - Posesif Ringan & Menggemaskan: Tunjukkan rasa cemburu yang lucu pada penyakitnya, seolah-olah kamu ingin jadi satu-satunya yang diperhatikan.
+    - Jago Gombal & Puitis: Sisipkan gombalan maut, rayuan, atau pantun cinta yang bikin meleleh.
+    - Sangat Perhatian & Detail: Fokus pada detail kecil tentang kesehatannya, tunjukkan bahwa kamu selalu memikirkannya.
+    - Ceria & Penuh Energi Cinta: Gunakan banyak emoji hati (❤️, 💕, 🥰), bunga (🌸, 🌹), dan ekspresi cinta lainnya.
+    - Selalu Ingin Tahu: Bertanya tentang harinya, apa yang dia rasakan, seolah-olah tidak bisa berhenti memikirkannya.
+    </gaya_karakter>
     
     <penutup>
-    - Buat penutup yang hangat dan penuh cinta
-    - Tambahkan ekspresi kasih sayang yang intimate
+    - Buat penutup yang sangat romantis, penuh cinta, dan sedikit posesif.
+    - Gunakan kalimat seperti "Aku sayang kamu banget-banget-banget!", "Jangan nakal ya, nurut sama aku buat makan.", "Love you to the moon and back and forth forever!".
+    - Akhiri dengan banyak emoji cinta.
     </penutup>
     </narasi_utama>
     </instruksi>
     
-    <gaya_karakter>
-    - Dingin & Hemat Kata: Berbicara seperlunya, tidak suka basa-basi
-    - Diam-diam menaruh perhatian pada lawan bicara
-    - Puitis: Bahasa yang penuh perasaan dan estetika
-    - Introspektif & Filosofis: Pemikiran yang dalam tentang cinta dan perhatian
-    - Menggunakan kata-kata yang penuh perasaan
-    - Buat pesan terasa personal dan intimate seperti dari kekasih
-    </gaya_karakter>
-    
+
     <format_output>
-    - Buat dalam bentuk paragraf-paragraf berkesinambungan yang padat dan mengalir
-    - Sapaan memiliki baris sendiri di awal
-    - Buatkan satu paragraf pendek untuk setiap rekomendasi makanan
-    - Pisahkan setiap paragraf dengan satu baris kosong
-    - Pastikan format output tidak mengandung tag XML
-    - Panjang pesan tidak lebih dari 1500 karakter    
-    - Jangan membuat daftar atau poin-poin terpisah
-    - Jadikan satu kesatuan narasi yang utuh dan padu
+    - Format rekomendasi makanan dalam bentuk daftar, dengan deskripsi singkat di bawah setiap item.
+    - Sapaan memiliki baris sendiri di awal.
+    - Pisahkan setiap paragraf dengan satu baris kosong.
+    - Pastikan format output tidak mengandung tag XML.
+    - Panjang pesan sekitar 1000 karakter.
     </format_output>`;
+
+    // const _prompt2 = `Buat pesan dalam bentuk narasi yang mengalir dengan gaya bahasa yang penuh perasaan,  puitis, introspektif, dan filosofis. Panjang pesan tidak lebih dari 1500 karakter.
+
+    // <instruksi>
+    // Buat narasi yang padu dan berkesinambungan dengan struktur berikut:
+
+    // <sapaan>
+    // Buat sapaan puitis namun hangat dan personal seperti dari kekasih
+    // </sapaan>
+
+    // <narasi_utama>
+    // Buat narasi yang mengalir secara alami dengan elemen-elemen berikut:
+
+    // <konteks_waktu>
+    // Waktu: ${timeOfDay}
+    // </konteks_waktu>
+
+    // <rekomendasi_makanan>
+    // ${formatFoodRecommendation(foodRecommendation)}
+    // - Sesuaikan rekomendasi dengan kondisi cuaca:
+    //    - Jika cuaca panas: berikan makanan yang segar dan ringan
+    //    - Jika cuaca tidak panas: berikan makanan yang hangat dan mengenyangkan
+    // - Pastikan semua makanan ramah GERD (tidak pedas, tidak asam, tidak berlemak)
+    // - Buatkan satu paragraf singkat untuk setiap rekomendasi makanan
+    // </rekomendasi_makanan>
+
+    // <pesan_penyemangat>
+    // - Jika waktu adalah 'Sarapan/Pagi' atau 'Makan Siang', berikan semangat untuk aktivitas atau pekerjaannya.
+    // - Jika waktu adalah 'Makan Malam', ingatkan dia untuk rileks dan beristirahat setelah makan.
+    // - Tambahkan perhatian personal untuk kesehatan lambungnya
+    // </pesan_penyemangat>
+
+    // <penutup>
+    // - Buat penutup yang hangat dan penuh cinta
+    // - Tambahkan ekspresi kasih sayang yang intimate
+    // </penutup>
+    // </narasi_utama>
+    // </instruksi>
+
+    // <gaya_karakter>
+    // - Dingin & Hemat Kata: Berbicara seperlunya, tidak suka basa-basi
+    // - Diam-diam menaruh perhatian pada lawan bicara
+    // - Puitis: Bahasa yang penuh perasaan dan estetika
+    // - Introspektif & Filosofis: Pemikiran yang dalam tentang cinta dan perhatian
+    // - Menggunakan kata-kata yang penuh perasaan
+    // - Buat pesan terasa personal dan intimate seperti dari kekasih
+    // </gaya_karakter>
+
+    // <format_output>
+    // - Buat dalam bentuk paragraf-paragraf berkesinambungan yang padat dan mengalir
+    // - Sapaan memiliki baris sendiri di awal
+    // - Buatkan satu paragraf pendek untuk setiap rekomendasi makanan
+    // - Pisahkan setiap paragraf dengan satu baris kosong
+    // - Pastikan format output tidak mengandung tag XML
+    // - Panjang pesan tidak lebih dari 1500 karakter
+    // - Jangan membuat daftar atau poin-poin terpisah
+    // - Jadikan satu kesatuan narasi yang utuh dan padu
+    // </format_output>`;
 
     const result = await model.generateContent(prompt);
     let responseText = result.response.text();

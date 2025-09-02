@@ -1,6 +1,6 @@
 # GERD Meal Reminder Bot
 
-Bot Discord sederhana yang dirancang untuk menjadi teman pengingat makan bagi penderita GERD. Bot ini memberikan rekomendasi makanan yang aman dan sesuai dengan kondisi cuaca, serta pesan penyemangat yang personal menggunakan AI dengan gaya karakter Rangga dari film "Ada Apa Dengan Cinta?".
+Bot Discord sederhana yang dirancang untuk menjadi teman pengingat makan bagi penderita GERD. Bot ini memberikan rekomendasi makanan yang aman untuk kekasih wanitanya, lengkap dengan deskripsi menu yang menggugah selera. Pesan penyemangatnya dirancang dengan gaya "bucin" yang super persuasif dan romantis untuk meyakinkannya menjaga pola makan.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fusername%2Freponame) *<-- Ganti `username/reponame` dengan URL repo Anda untuk membuat tombol ini berfungsi!*
 
@@ -9,9 +9,9 @@ Bot Discord sederhana yang dirancang untuk menjadi teman pengingat makan bagi pe
 ## ✨ Fitur Utama
 
 - **Pengingat Terjadwal**: Mengirim pengingat makan 3x sehari secara otomatis.
-- **Rekomendasi Cerdas**: Rekomendasi makanan disesuaikan dengan cuaca (panas/tidak panas) dan waktu (pagi/siang/malam) berdasarkan perbedaan suhu dengan rata-rata Indonesia.
+- **Rekomendasi Cerdas dengan Deskripsi**: Rekomendasi makanan tidak hanya disesuaikan dengan cuaca dan waktu, tetapi juga dilengkapi deskripsi singkat yang menggugah selera.
 - **Database Makanan GERD**: Database berisi 20 makanan nasi dan 20 makanan non-nasi untuk setiap waktu makan yang umum dimakan orang Indonesia, terjangkau, mudah didapat, dan ramah GERD.
-- **Personalisasi AI**: Pesan dibuat seolah-olah dari orang terdekat menggunakan Google Gemini API dengan gaya karakter Rangga.
+- **Personalisasi AI untuk Wanita**: Pesan secara eksplisit ditujukan untuk seorang wanita, dengan gaya bahasa "bucin" yang super personal dan persuasif untuk memberikan dukungan emosional yang maksimal.
 - **Optimasi Penggunaan API**: Menggabungkan pesan penyemangat dan pesan akhir dalam satu panggilan API.
 - **Pemecahan Pesan Panjang**: Memecah pesan yang melebihi 2000 karakter menjadi beberapa bagian.
 - **Siap Deploy**: Dioptimalkan untuk deployment mudah dan gratis di Vercel.
@@ -150,13 +150,12 @@ Pendekatan ini memungkinkan bot untuk memberikan rekomendasi makanan yang lebih 
 
 ## 💖 Gaya Bahasa Bot
 
-Bot ini menggunakan gaya bahasa yang terinspirasi dari karakter Rangga dalam film "Ada Apa Dengan Cinta?":
-- **Dingin & Hemat Kata**: Berbicara seperlunya, tidak suka basa-basi
-- **Sarkastis & Sinis Ringan**: Kadang ucapannya bernada menyindir dengan halus
-- **Diam-diam menaruh perhatian**: Menunjukkan kepedulian secara halus
-- **Puitis**: Bahasa yang penuh perasaan dan estetika
-- **Introspektif**: Pemikiran yang dalam tentang cinta dan perhatian
-- **Personal dan Intimate**: Pesan yang terasa seperti dari kekasih
+Bot ini dirancang dengan kepribadian "bucin" yang sangat persuasif dan ditujukan untuk seorang kekasih wanita:
+- **Tertuju pada Wanita**: Menggunakan panggilan sayang khusus untuk wanita ("Cantik", "Bidadariku").
+- **Super Bucin & Persuasif**: Bahasa yang memuja, manja, dan mendesak dengan lembut untuk meyakinkan.
+- **Jago Gombal & Puitis**: Sering menyisipkan rayuan, gombalan maut, atau janji-janji manis.
+- **Sangat Perhatian & Detail**: Memberikan deskripsi menu yang menggugah selera dan fokus pada detail kesehatannya.
+- **Ekspresif & Ceria**: Penuh dengan emoji cinta (❤️, 💕, 🥰) dan ekspresi kasih sayang lainnya.
 
 ## 🍽️ Database Makanan
 
